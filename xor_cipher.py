@@ -20,7 +20,7 @@ cipher = []
 
 
 cipher_input = input('Enter the string to cipher: ')
-key_input = input('Enter 8bit key ex:10101101: ')
+key_input = '101010101' #input('Enter 8bit key ex:10101101: ')
 
 for ch in cipher_input:
     
@@ -62,4 +62,20 @@ for f in range(len(asc_list)-2):
     
     cipher.append(xor(asc_list[f], key))
 
+
+cipher_str = []
+cipher_text = []
+
+
+cipher_str = ["".join((map(str, (cipher[i])))) for i in range(len(cipher))]
+
+for i in range(len(cipher_str)):
+    cipher_text.append(chr(int(cipher_str[i],2)))
+    
+
+#decipher_1 = list(map(int, decipher))
+cipher_text = ["".join(cipher_text)]
+
 print(cipher)
+print(cipher_str)
+print(cipher_text)
