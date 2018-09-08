@@ -1,4 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+Created on August  26 20:16:44 2018
 
+@author: ahmad
+"""
+
+
+"""
+a program to encrypt and decrypt data in 8-bit XOR encryption using all
+built-in functions. No libraries used. This program is for learning puposes
+"""
 
 def xor(x,y): #function to cypher text
 	g = []
@@ -20,7 +31,7 @@ cipher = []
 
 
 cipher_input = input('Enter the string to cipher: ')
-key_input = '101010101' #input('Enter 8bit key ex:10101101: ')
+key_input =  input('Enter 8bit key ex:10101101: ') #'01010101'
 
 for ch in cipher_input:
     
@@ -62,10 +73,7 @@ for f in range(len(asc_list)-2):
     
     cipher.append(xor(asc_list[f], key))
 
-
-cipher_str = []
 cipher_text = []
-
 
 cipher_str = ["".join((map(str, (cipher[i])))) for i in range(len(cipher))]
 
@@ -74,8 +82,13 @@ for i in range(len(cipher_str)):
     
 
 #decipher_1 = list(map(int, decipher))
-cipher_text = ["".join(cipher_text)]
+cipher_text = "".join(cipher_text)
 
-print(cipher)
-print(cipher_str)
-print(cipher_text)
+#print(cipher)
+#print(cipher_str)
+print('\nXOR encryption:',cipher_text)
+
+with open('cypher.txt', 'w') as fout:
+    fout.write(cipher_text)
+    
+
