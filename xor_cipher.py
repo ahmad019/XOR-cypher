@@ -89,6 +89,6 @@ cipher_text = "".join(cipher_text)
 print('\nXOR encryption:',cipher_text)
 
 with open('cypher.txt', 'w') as fout:
-    fout.write(cipher_text)
+    fout.write('\nXOR encryption: {0}'.format(cipher_text))
     
 
